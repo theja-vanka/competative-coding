@@ -2,14 +2,14 @@
 #include <vector>
 #include <map>
 #include <unordered_set>
-#include<algorithm>
+#include <algorithm>
 using namespace std;
 
 // Time Complexity O(N^2) and Space Complexity O(1)
 vector<int> twoNumberSumN2(vector<int> array, int targetSum){
     // Using two loops for solving.
     for(int i = 0; i < array.size() - 1; i++){
-        for(int j = i + 1; j < array.size() - 1; j++){
+        for(int j = i + 1; j < array.size(); j++){
             if(array[i] + array[j] == targetSum)
                 return vector<int> {array[i], array[j]}; 
         }
@@ -61,7 +61,7 @@ vector<int> twoNumberSumSort(vector<int> array, int targetSum){
         else if(array[left] + array[right] < targetSum)
             left = left + 1;
         else
-            right = right + 1;
+            right = right - 1;
     }
     return {};
 }
